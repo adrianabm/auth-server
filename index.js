@@ -5,6 +5,11 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
 const router = require('./router');
+const mongoose = require('mongoose');
+
+// DB Setup
+console.log(mongoose.createConnection('mongodb://localhost:auth/auth'))
+mongoose.connect('mongodb://localhost:auth/auth');
 
 // App setup
 // Morgan: logging framework for income requests (mostly used here for debugging)
